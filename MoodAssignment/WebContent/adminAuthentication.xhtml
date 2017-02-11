@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en"
+     xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+<h:body>
+<h2>Administrator Access:</h2>       
+
+<h:form id="loginForm">
+User	<h:inputText id="user" name="user" required="true" requiredMessage="Field cannot be empty" value="#{adminlogin.user}">User</h:inputText>
+
+<br></br>
+
+Password	<h:inputSecret id="password" name="password" required="true" requiredMessage="Field cannot be empty" value="#{adminlogin.password}"></h:inputSecret>
+
+<br></br>
+<h:commandButton value="Login" action="#{adminlogin.authenticateAdmin()}"></h:commandButton>
+</h:form>
+
+<br></br>
+
+<h:form>
+	<h:commandLink value="Back" action="/mainPage.xhtml?faces-redirect=true"></h:commandLink>
+</h:form>
+      
+</h:body>
+</html>

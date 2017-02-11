@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en"
+   	xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"  >
+    
+<h:head>
+	<h:outputStylesheet name="common-style.css" library="css" />
+</h:head>
+<h:body>
+<h1>Manage Websites</h1>
+             
+    <p:dataTable id="allPages" name="allPages" value="#{pageactions.getPages()}" var="page" styleClass="order-table" headerClass="order-table-header">
+        <p:column>
+        <f:facet name="header">Page name</f:facet>
+        #{page.page}
+        </p:column>
+        
+        <p:column>
+        <f:facet name="header">Sites</f:facet>
+        #{page.sites}
+        </p:column>
+        
+     </p:dataTable>
+        
+    <br></br>
+    
+<h3>Track a new website:</h3>
+
+<h:form id="trackPageForm">
+Page	<h:inputText required="true" requiredMessage="Please enter a website" id="page" name="page" value="#{pageactions.page}">Page</h:inputText>	<h:message for="page" style="color:red" styleClass="error" />
+<br></br>
+Site	<h:inputText required="true" requiredMessage="Please enter the website subthread" id="site" name="site" value="#{pageactions.site}">Site</h:inputText>	<h:message for="site" style="color:red" styleClass="error"/>
+
+<br></br>
+
+<h:commandButton value="Submit" action="#{pageactions.submit()}"></h:commandButton>
+<br></br>
+
+</h:form>
+<br></br>
+<h:form>  
+	<h:commandLink value="Back" action="/adminAccess.xhtml?faces-redirect=true"></h:commandLink>
+</h:form>
+</h:body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsf/core">
+
+<h:body>
+<h1>Administrator access: </h1>
+    
+<h:outputLink value="engineManager.xhtml">Manage Engines</h:outputLink>
+<br></br>
+<h:outputLink value="websiteManager.xhtml">Manage websites</h:outputLink>
+<br></br>
+<h:form>
+	<h:commandButton value="Logout" action="#{adminlogin.logOut()}"></h:commandButton>
+</h:form>      
+</h:body>
+</html>
